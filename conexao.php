@@ -12,14 +12,14 @@ CREATE TABLE livros (
     quantidade INT NOT NULL
 );*/ 
 
+$servidor = 'localhost';
+$banco = 'biblioteca';
 $usuario = 'root';
 $senha = '';
-$banco = 'biblioteca';
-$servidor = 'localhost';
 
 try {
     $conexao = new PDO("mysql:host=$servidor;dbname=$banco;charset=utf8", $usuario, $senha);
-} catch (PDOException $php_erro) {
-    die("Erro ao conectar: " .$erro->getMessage());
+} catch (PDOException $erro) {
+    die("Erro ao conectar: " . $erro->getMessage());
 }
 ?>
